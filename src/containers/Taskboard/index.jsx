@@ -11,7 +11,7 @@ import TaskList from "../../components/TaskList";
 import TaskForm from "../../components/TaskForm";
 import { useDispatch } from "react-redux";
 import PropTypes from 'prop-types';
-import { fetchListTaskRequest } from "../../actions/task";
+import { fetchListTaskRequest, fetchListTask } from "../../actions/task";
 import { useSelector } from "react-redux";
 
 // const listTask = [
@@ -44,13 +44,15 @@ function TaskBoard(props) {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchListTaskRequest());
+    // useEffect(() => {
+    //     // dispatch(fetchListTaskRequest());
 
-    //   return () => {
-    //     second;
-    //   };
-    }, [dispatch]);
+    //     dispatch(fetchListTask());
+
+    // //   return () => {
+    // //     second;
+    // //   };
+    // }, [dispatch]);
 
 
     const handleClickOpen = () => {
@@ -62,7 +64,7 @@ function TaskBoard(props) {
     };
 
     const renderBoard = useCallback(() => {
-        // console.log("renderBoard");
+        console.log("renderBoard");
         let xhtml = null;
         xhtml = (
             <Grid container spacing={2}>
@@ -86,10 +88,18 @@ function TaskBoard(props) {
         return xhtml;
     }, [open]);
 
+    const loadData = () => {
+        // dispatch(fetchListTaskRequest());
+        dispatch(fetchListTask());
+    }
+
     return (
         <div className={classes.taskBoard}>
             <Button onClick={handleClickOpen} variant="contained" color="primary" className={classes.button}>
                 <AddIcon /> Thêm mới công việc
+            </Button>
+            <Button onClick={loadData} variant="contained" color="success" className={classes.button}>
+                Load Data
             </Button>
             {renderBoard()}
             {renderForm()}

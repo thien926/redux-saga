@@ -24,24 +24,24 @@
 // console.log('==================== done vòng lặp vô tận ===============================');
 
 
-console.log('==================== generator function: generator trong generator ============================');
-function* printName() {
-    yield 'redux-saga';
-}
+// console.log('==================== generator function: generator trong generator ============================');
+// function* printName() {
+//     yield 'redux-saga';
+// }
 
-function* hello() {
-    yield 'xin chào';
+// function* hello() {
+//     yield 'xin chào';
 
-    // const nameIterator = printName();
-    // yield nameIterator.next();
+//     // const nameIterator = printName();
+//     // yield nameIterator.next();
 
-    yield* printName();
+//     yield* printName();
 
-    yield '. Kết thúc.';
-}
+//     yield '. Kết thúc.';
+// }
 
-const iterator = hello();
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
-console.log('==================== done generator function: generator trong generator ===============================');
+// const iterator = hello();
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log('==================== done generator function: generator trong generator ===============================');

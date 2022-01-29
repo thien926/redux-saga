@@ -4,12 +4,11 @@ import { withStyles } from "@mui/styles";
 import Taskboard from "../Taskboard";
 import theme from "../../commons/Theme";
 import { Provider } from "react-redux";
-import configureStore from "../../redux/configureStore";
+import configureStore from "../../redux/configureStore-v2";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const store = configureStore();
-
 function App() {
     return (
         <Provider store={store}>

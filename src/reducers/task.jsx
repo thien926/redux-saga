@@ -7,11 +7,11 @@ const initialState = {
 
 const taskReducer = (state = initialState, action) => {
     switch (action.type) {
-        case taskConstants.FETCH_TASK:
-            return {
-                ...state,
-                listTask: []
-            }
+        // case taskConstants.FETCH_TASK:
+        //     return {
+        //         ...state,
+        //         listTask: []
+        //     }
 
         case taskConstants.FETCH_TASK_SUCCESS:
             const { data } = action.payload;
