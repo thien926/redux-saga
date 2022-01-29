@@ -1,0 +1,55 @@
+npm install @mui/material - npm install @mui/material @emotion/react @emotion/styled
+
+<link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+npm install @mui/icons-material
+
+npm install @mui/styles
+1.  npm install eslint @babel/core @babel/eslint-parser --save-dev
+    tại .eslintrc.js:
+    module.exports = {
+        parser: "@babel/eslint-parser",
+        parserOptions: {
+            requireConfigFile: false,
+        },
+        rules: {
+            semi: 1
+        }
+    };
+
+2.  npm install eslint-plugin-react --save-dev
+    module.exports = {
+        Combobox: require('./combobox'),
+        Option: require('./option'),
+        parser: "@babel/eslint-parser",
+        parserOptions: {
+            requireConfigFile: false,   // Parsing error: No Babel config file detected for E:\React\Hoc\redux-saga\.eslintrc.js. Either disable config file checking with requireConfigFile: false, or configure Babel so that it can find the config files.
+            "babelOptions": {
+                "presets": ["@babel/preset-react"]
+            },          // Parsing error: This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript".
+            ecmaVersion: "latest",
+            sourceType: "module",
+            ecmaFeatures: {
+                jsx: true
+            }
+        },
+        extends: [
+            "eslint:recommended",
+            "plugin:react/recommended"
+        ],
+        rules: {
+            semi: 1,
+            'react/prop-types': 1
+        }
+    };
+
+3.  npm i redux react-redux redux-thunk --save
+4.  npm i axios --save
+5.  npm i react-toastify --save

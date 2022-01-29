@@ -1,0 +1,32 @@
+module.exports = {
+    Combobox: require('./combobox'),
+    Option: require('./option'),
+    parser: "@babel/eslint-parser",
+    parserOptions: {
+        requireConfigFile: false,   // Parsing error: No Babel config file detected for E:\React\Hoc\redux-saga\.eslintrc.js. Either disable config file checking with requireConfigFile: false, or configure Babel so that it can find the config files.
+        "babelOptions": {
+            "presets": ["@babel/preset-react"]
+        },          // Parsing error: This experimental syntax requires enabling one of the following parser plugin(s): "jsx", "flow", "typescript".
+        ecmaVersion: "latest",
+        sourceType: "module",
+        ecmaFeatures: {
+            jsx: true
+        }
+    },
+    extends: [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    rules: {
+        semi: 1,
+        'react/prop-types': 1
+    }
+};
+// define(function (require, exports, module) {
+
+//     module.exports = {
+//         Combobox: require('./combobox'),
+//         Option: require('./option')
+//     };
+
+// });
